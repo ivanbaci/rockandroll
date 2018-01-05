@@ -1,0 +1,87 @@
+#teatro {
+	width: 700px;
+	height: 700px;
+}
+
+#stage {
+    background-color: red;
+    height: 150px;
+    width: 400px;	
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+#sitting-area {
+	height: 400px;
+	width: 400px;
+	margin: 0 auto;
+}
+
+#vip {
+	height: 200px;
+	width: 400px;
+	background-color: #93fb91;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#fondo {
+	height: 200px;
+	width: 400px;
+	background-color: #036f01;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.fila {
+	width: 400px;
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.sector-izq {
+	width: 200px;
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.sector-der {
+	width: 200px;
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.button {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+}
+	
+.asiento, .asiento-reservado {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 35px;
+	height: 35px;
+}
+
+.asiento {
+	background-color: black;
+}
+
+.asiento-reservado {
+	background-color: red;
+}
