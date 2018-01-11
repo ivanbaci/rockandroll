@@ -41,6 +41,10 @@ img {
 	font-size: 20px;
 }
 
+.event {
+	display: flex;
+}
+
 .galeria {
 	display: flex;
 }

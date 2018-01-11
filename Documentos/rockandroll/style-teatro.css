@@ -1,6 +1,7 @@
 #teatro {
 	width: 700px;
 	height: 700px;
+	margin-top: 20px;
 }
 
 #stage {
@@ -9,6 +10,14 @@
     width: 400px;	
     margin: 0 auto;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banda {
+	text-align: center;
+	font-size: 2em;
 }
 
 #sitting-area {
@@ -79,9 +88,9 @@
 }
 
 .asiento {
-	background-color: black;
+	background-color: white;
 }
 
 .asiento-reservado {
-	background-color: red;
+	background-color: black;
 }
