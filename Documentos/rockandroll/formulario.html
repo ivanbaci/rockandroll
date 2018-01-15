@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario</title>
+	<link rel="stylesheet" type="text/css" href="style-formulario.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="formulario.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+	  		<label for="nombre" class="column-labels">Nombre</label>
+	  		<input id="nombre" type="text" placeholder="Tu nombre...">
+	  	</div>
+
+	  	<div class="row">
+	  		<label for="apellido" class="column-labels">Apellido</label>
+	  		<input id="apellido" type="text" placeholder="Tu apellido...">
+		</div> 
+
+		<div class="row">
+	  		<label for="mail" class="column-labels">Email</label>
+	  		<input id="mail" type="email" placeholder="Tu email...">
+		</div> 
+
+		<div class="row">
+	  		<label for="entradas" class="column-labels">Cantidad de entradas (max 6)</label>
+	  		<input id="entradas" type="number" name="quantity" min="1" max="6">
+		</div> 
+		<div class="row">
+    		<input type="submit" value="Submit" onclick="redirect();">
+    	</div>
+	</div>
+</body>
+</html>

@@ -6,6 +6,8 @@ $( document ).ready(function() {
 	function addArtist() {
 		var nombre = sessionStorage.getItem("Artist");
 
+		//var finalName = JSON.parse(nombre);
+
 	  	sessionStorage.removeItem("Artist");
 
 	  	$('#banda').append(nombre);
@@ -14,7 +16,9 @@ $( document ).ready(function() {
 	addArtist();
 
 	function getCantEntradas() {
-    	return $(".entradas")[0].value;
+		var entradas = sessionStorage.getItem("Entradas");
+
+    	return entradas;
 	}
 
     $('.asiento').click(function() {
@@ -31,6 +35,13 @@ $( document ).ready(function() {
 			current --;
 		}
 	});
+
+	$("#printButton").click(function(){
+        var mode = 'iframe'; //popup
+        var close = mode == "popup";
+        var options = { mode : mode, popClose : close};
+        $("div.printableArea").printArea( options );
+    });
 })
 
 

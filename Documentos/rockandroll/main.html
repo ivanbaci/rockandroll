@@ -3,38 +3,172 @@
 <head>
 	<title>"Rock and roll" </title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style-formulario.css">
+	<link rel="stylesheet" type="text/css" href="style-teatro.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="main.js"></script>
+	<script src="formulario.js"></script>
+	<script src="elegir_asiento.js"></script>
 </head>
 
 <body>
-	<h1 class="my-blue-elements">Teatro del rock</h1>
-	<section class="my-blue-elements">
-		<h2>Proximos eventos</h2>
-		<p class="descripcion"><b>Aquí</b> puede encontrar una <b>lista</b> con los próximos <b>eventos</b> que van a hacerse en el teatro:</p>
-		<ul class="next-events">
-			<div class="event">
-				<li id="U2">U2</li>
-				<a href="elegi-tu-asiento.html" onclick="saveArtist('U2')">Elegí tu asiento</a>
+	<div class="main">
+		<h1 class="my-blue-elements">Teatro del rock</h1>
+		<section class="my-blue-elements">
+			<h2>Proximos eventos</h2>
+			<p class="descripcion"><b>Aquí</b> puede encontrar una <b>lista</b> con los próximos <b>eventos</b> que van a hacerse en el teatro:</p>
+			<ul class="next-events">
+				<div class="event">
+					<li id="U2">U2 <a onclick="saveArtist('U2')" href="formulario.html">Elegí tu asiento</a></li>
+				</div>
+				<div class="event">
+					<li id="waters">Roger Waters <a onclick="saveArtist('Roger Waters')" href="formulario.html">Elegí tu asiento</a></li>
+				</div>
+				<div class="event">
+					<li id="stones">Rolling Stones <a onclick="saveArtist('Rolling Stones')" href="formulario.html">Elegí tu asiento</a></li>
+				</div>
+			</ul>	
+		</section>
+		<section>
+			<h2 class="my-blue-elements">Galeria de fotos</h2>
+			<div class="galeria">
+				<div id="image-guitarra">
+					<img src="./images/guitarra.jpg" alt="Una guitarra"/>
+				</div>
+				<div id="image-teatro">	
+					<img src="./images/teatro.jpg" alt="El teatro"/>
+				</div>
 			</div>
-			<div class="event">
-				<li id="waters">Roger Waters</li>
-				<a href="elegi-tu-asiento.html" onclick="saveArtist('Roger Waters')">Elegí tu asiento</a>
-			</div>
-			<div class="event">
-				<li id="stones">Rolling Stones</li>
-				<a href="elegi-tu-asiento.html" onclick="saveArtist('Rolling Stones')">Elegí tu asiento</a>
-			</div>
-		</ul>	
-	</section>
-	<section>
-		<h2 class="my-blue-elements">Galeria de fotos</h2>
-		<div class="galeria">
-			<div id="image-guitarra">
-				<img src="./images/guitarra.jpg" alt="Una guitarra"/>
-			</div>
-			<div id="image-teatro">	
-				<img src="./images/teatro.jpg" alt="El teatro"/>
+		</section>
+		<div>
+			<h2 class="my-blue-elements">Ubicación</h2>
+			<div id="map"></div>
+		    <script src="https://maps.googleapis.com/maps/api/js?&callback=initMap"></script>
+		</div>
+		<div>
+			<h2 class="my-blue-elements">Figura</h2>
+			<div id="fondo-cube">
+				<div id="cube"></div>
 			</div>
 		</div>
-	</section>
+	</div>
+
+	<div class="formulario">
+		<div class="container">
+		<div class="row">
+	  		<label for="nombre" class="column-labels">Nombre</label>
+	  		<input id="nombre" type="text" placeholder="Tu nombre...">
+	  	</div>
+
+	  	<div class="row">
+	  		<label for="apellido" class="column-labels">Apellido</label>
+	  		<input id="apellido" type="text" placeholder="Tu apellido...">
+		</div> 
+
+		<div class="row">
+	  		<label for="mail" class="column-labels">Email</label>
+	  		<input id="mail" type="email" placeholder="Tu email...">
+		</div> 
+
+		<div class="row">
+	  		<label for="entradas" class="column-labels">Cantidad de entradas (max 6)</label>
+	  		<input id="entradas" type="number" name="quantity" min="1" max="6">
+		</div> 
+		<div class="row">
+    		<input type="submit" value="Submit" onclick="redirect();">
+    	</div>
+	</div>
+
+	<div class="elegi-tu-asiento">
+		<h1>Elegí tu asiento</h1>
+		<div id="teatro">
+			<div id="stage">
+				<p><b id="banda"></b></p>
+			</div>
+			<div id="sitting-area">
+				<div id="vip">
+					<div class="fila">
+						<div class="sector-izq">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+						<div class="sector-der">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+					</div>
+
+					<div class="fila">
+						<div class="sector-izq">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+						<div class="sector-der">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+					</div>
+
+					<div class="fila">
+						<div class="sector-izq">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+						<div class="sector-der">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+					</div>							
+				</div>
+
+				<div id="fondo">
+					<div class="fila">
+						<div class="sector-izq">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+						<div class="sector-der">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+					</div>
+
+					<div class="fila">
+						<div class="sector-izq">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+						<div class="sector-der">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+					</div>
+
+					<div class="fila">
+						<div class="sector-izq">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+						<div class="sector-der">
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+							<button class="asiento"></button>
+						</div>
+					</div>		
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

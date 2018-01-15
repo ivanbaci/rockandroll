@@ -3,6 +3,14 @@ html {
     margin: auto;
 }
 
+.main {
+	background-color: black;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Times New Roman", Times, serif;
+	font-stretch: ultra-condensed;
+}
+
 body {
 	background-color: black;
     display: table-cell;
@@ -61,3 +69,32 @@ img {
 	height: 200px;
 }
 
+#map {
+	width: 600px;
+	height: 400px;
+	margin-bottom: 50px;
+}
+
+#fondo-cube {
+	width: 25%;
+  	height: 40%;
+  	position: absolute;
+  	background-color: red;
+  	margin-top: 10px;
+  	margin-bottom: 20px;
+}
+
+#cube {
+	background-color: white;
+	width: 30%;
+  	height: 30%;
+	position: absolute;
+  	transform-style: preserve-3d;
+	margin: 0;
+	display: block;
+	position: absolute;
+	border: 2px solid black;
+	perspective: 500px;
+	transform: rotate(25deg);
+	transform: translateX(10px);
+}
